@@ -1,5 +1,6 @@
 <form method="POST" action="{{ route('login') }}">
     @csrf
+    @include('includes.header')
 
     <div>
         <label for="email">Email:</label>

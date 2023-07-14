@@ -13,7 +13,7 @@
             font-size: 30px;
         }
 
-        .btn {
+        .custom-btn {
             display: inline-block;
             padding: 10px 20px;
             color: white;
@@ -25,14 +25,26 @@
             cursor: pointer;
         }
 
-        .btn-login {
-            background-image: linear-gradient(to right, #007bff, #6c757d);
+        .custom-btn-login {
+            background-color: #007bff;
+            border: 1px solid #007bff;
         }
 
-        .btn-register {
-            background-image: linear-gradient(to right, #28a745, #ffc107);
+        .custom-btn-register {
+            background-color: #28a745;
+            border: 1px solid #28a745;
         }
-
+        
+        .custom-btn-posts {
+            background-color: #ffc107;
+            border: 1px solid #ffc107;
+        }
+        
+        .custom-btn:hover {
+            background-color: #ccc;
+            border-color: #ccc;
+        }
+        
         #image-container {
             margin-top: 20px;
             display: none;
@@ -46,20 +58,22 @@
     </script>
 </head>
 <body>
-    <h1>Bienvenido al mejor blog del mundo</h1>
-    <p>Aquí encontrarás contenido increíble y emocionante.</p>
+@include('includes.header')
 
-    <button class="btn" onclick="showImage()">Frase del dia</button>
+<h1>Bienvenido al mejor blog del mundo</h1>
+<p>Aquí encontrarás contenido increíble y emocionante.</p>
 
-    <div id="image-container">
-        <img src="/bluelabel.jpeg">
-    </div>
-    </style>
-</head>
-<body>
-    <p>Una vez logueado podras acceder a los posts</p>
+<button class="custom-btn custom-btn-home" onclick="showImage()">Frase del día</button>
 
-    <a href="{{ route('login') }}" class="btn btn-login">Iniciar sesión</a>
-    <a href="{{ route('register') }}" class="btn btn-register">Registrarse</a>
+<div id="image-container">
+    <img src="/bluelabel.jpeg">
+</div>
+
+<p>Una vez logueado podrás acceder a los posts</p>
+
+<a href="{{ route('login') }}" class="custom-btn custom-btn-login">Iniciar sesión</a>
+<a href="{{ route('register') }}" class="custom-btn custom-btn-register">Registrarse</a>
+<a href="{{ route('list') }}" class="custom-btn custom-btn-posts">Ir a los posts</a>
+
 </body>
 </html>

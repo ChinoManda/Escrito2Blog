@@ -1,5 +1,6 @@
 <form method="POST" action="/register">
     @csrf
+    @include('includes.header')
 
     <div>
         <label for="name">Nombre:</label>
