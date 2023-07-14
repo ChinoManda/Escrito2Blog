@@ -4,9 +4,24 @@
     <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
-        @error('email')
-            <span>{{ $message }}</span>
-        @enderror
+
+@if(session("created"))
+        <div class="alert alert-success">
+            User created
+        </div>
+    @endif
+
+    @if(session("logout"))
+    <div class="alert alert-warning">
+        User logged out
+    </div>
+    @endif
+
+    @if(session("failed"))
+        <div class="alert alert-danger">
+            Invalid credentials
+        </div>
+    @endif
     </div>
 
     <div>

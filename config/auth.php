@@ -39,6 +39,7 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'table' => 'author',
         ],
     ],
 
@@ -62,7 +63,8 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\author::class,
+            'table' => 'author',
         ],
 
         // 'users' => [

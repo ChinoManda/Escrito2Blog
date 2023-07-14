@@ -22,7 +22,7 @@ class AuthorController extends Controller
         $validation = Validator::make($request->all(),[
             'name' => 'required | alpha:ascii | unique:author',
             'email' => 'email | required | unique:author',
-            'password' =>'required | min:8 | confirmed'
+            'password' =>'required | confirmed'
         ]);
         return $validation;
     }
@@ -39,10 +39,13 @@ class AuthorController extends Controller
     }
 
     public function Login(Request $request){
+ 
         $credentials = $request->only('email', 'password');
+    
         if (Auth::attempt($credentials)) 
-            return redirect("/");
-        return redirect("/login")->with("failed",true);
+            return redirect("/post");
+            
+        return redirect("/ssss")->with("failed",true);
     }
 
     public function Logout(Request $request){

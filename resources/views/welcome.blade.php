@@ -57,7 +57,6 @@
     </style>
 </head>
 <body>
-    <h1>Bienvenido al mejor blog del mundo</h1>
     <p>Una vez logueado podras acceder a los posts</p>
 
     <a href="{{ route('login') }}" class="btn btn-login">Iniciar sesión</a>
