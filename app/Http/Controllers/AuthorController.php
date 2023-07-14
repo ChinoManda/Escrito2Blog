@@ -20,7 +20,7 @@ class AuthorController extends Controller
 
     public function RegisterValidation(Request $request){
         $validation = Validator::make($request->all(),[
-            'name' => 'required | alpha:ascii | unique:author ',
+            'name' => 'required | alpha:ascii | unique:author',
             'email' => 'email | required | unique:author',
             'password' =>'required | min:8 | confirmed'
         ]);

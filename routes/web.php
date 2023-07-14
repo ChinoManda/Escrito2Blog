@@ -15,8 +15,10 @@ use App\Http\Controllers\AuthorController;
 
 Route::view('/register', 'register')->name('register');
 #Route::get('/register', [AuthorController::class, 'Register'])->name('register');
-Route::post('/register', [AuthorController::class, 'Registercreate'])->name('register.create');
+Route::post('/register', [AuthorController::class, 'Register'])->name('register.create');
 
+Route::view('/login', 'login')->name('login');
+Route::post('/login', [AuthorController::class, 'Login'])->name('Login');
 Route::get('/', function () {
     return view('welcome');
 });
