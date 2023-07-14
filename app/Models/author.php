@@ -19,7 +19,7 @@ class author extends Model implements Authenticatable
      */
     public function getAuthIdentifierName()
     {
-        return 'id';
+        return 'id_author';
     }
 
     /**

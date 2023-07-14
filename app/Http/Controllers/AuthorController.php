@@ -43,13 +43,13 @@ class AuthorController extends Controller
         $credentials = $request->only('email', 'password');
     
         if (Auth::attempt($credentials)) 
-            return redirect("/post");
+            return redirect("/list");
             
-        return redirect("/ssss")->with("failed",true);
+        return redirect("/login")->with("failed",true);
     }
 
     public function Logout(Request $request){
         Auth::logout();
-        return redirect("/login")->with("logout",true);
+        return redirect("/")->with("logout",true);
     }
 }
