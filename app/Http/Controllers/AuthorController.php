@@ -5,6 +5,7 @@ use App\Models\author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 class AuthorController extends Controller
 {
     public function Register(Request $request){

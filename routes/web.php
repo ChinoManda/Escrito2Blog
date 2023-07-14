@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::view('/register', 'register')->name('register');
+#Route::get('/register', [AuthorController::class, 'Register'])->name('register');
+Route::post('/register', [AuthorController::class, 'Registercreate'])->name('register.create');
 
 Route::get('/', function () {
     return view('welcome');
