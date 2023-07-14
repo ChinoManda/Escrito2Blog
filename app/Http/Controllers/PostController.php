@@ -28,7 +28,22 @@ class PostController extends Controller
     }
 
     public function Create(Request $request){
-
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'publicity' => 'nullable|boolean',
+        ]);
+    
+        $user = Auth::user();
+    
+        $post = new Post();
+        $post->title = $validatedData['title'];
+        $post->body = $validatedData['body'];
+        $post->advertisement = $request->has('advertisement');
+        $post->user_id = $user->id;
+        $post->save();
+    
+        return redirect('/posts')->with('success', 'El post se ha creado correctamente');
     }
 
 

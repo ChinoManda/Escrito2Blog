@@ -65,6 +65,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\author::class,
             'table' => 'author',
+            'id' => 'id_author',
         ],
 
         // 'users' => [

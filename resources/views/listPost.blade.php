@@ -49,7 +49,21 @@
         color: #fff;
     }
 
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: #ccc;
+    }
+
 </style>
+@include('includes.header')
 
 <h1>Lista de Posts</h1>
 
@@ -65,6 +79,7 @@
         </li>
     @endforeach
 </ul>
+<a href="/post" class="button">Crear un post</a>
 <div class="pagination">
 {{ $post->links() }}
-
+</div>
