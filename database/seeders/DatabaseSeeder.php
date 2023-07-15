@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(AuthorSeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(RatingSeeder::class);
     }
 }
