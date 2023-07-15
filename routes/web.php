@@ -16,6 +16,8 @@ Route::view('/register', 'register')->name('register');
 
 Route::post('/register', [AuthorController::class, 'Register'])->name('register.create');
 
+Route::get('/profile', [AuthorController::Class, 'Profile'])->name('profile');
+
 Route::view('/login', 'login')->name('login');
 Route::post('/login', [AuthorController::class, 'Login'])->name('Login');
 Route::get('/logout', [AuthorController::class, 'Logout']);
