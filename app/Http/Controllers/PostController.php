@@ -31,19 +31,17 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'publicity' => 'nullable|boolean',
+            'publicity' => 'nullable',
         ]);
     
-        $user = Auth::user();
-    
+        $Author = Auth::user();
         $post = new Post();
         $post->title = $validatedData['title'];
         $post->body = $validatedData['body'];
-        $post->advertisement = $request->has('advertisement');
-        $post->user_id = $user->id;
+        $post->publicity = $request->post('publicity') ? 1 : 0;;
+        $post->author = $Author->id_author;
         $post->save();
-    
-        return redirect('/posts')->with('success', 'El post se ha creado correctamente');
+        return redirect('/post')->with('success', 'El post se ha creado correctamente');
     }
 
 
