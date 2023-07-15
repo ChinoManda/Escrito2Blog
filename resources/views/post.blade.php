@@ -38,6 +38,16 @@
     .form-container button:hover {
         background-color: #ccc;
     }
+
+    .custom-btn-list {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    }
+
+    .custom-btn-list:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+    }
 </style>
 @include('includes.header')
 
@@ -58,10 +68,11 @@
         </div>
 
         <div>
-            <label for="advertisement">¿Publicidad?</label>
-            <input type="checkbox" name="advertisement" id="advertisement">
+            <label for="publicity">¿Publicidad?</label>
+            <input type="checkbox" name="publicity" id="publicity">
         </div>
 
         <button type="submit">Crear Post</button>
     </form>
 </div>
+<a href="{{ route('list') }}" class="custom-btn custom-btn-list">Ver lista</a>
